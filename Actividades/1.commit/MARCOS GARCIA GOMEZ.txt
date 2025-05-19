@@ -1,4 +1,4 @@
-*¿Cómo se inicializa un repositorio local? (que comando se debe ejecutar?)*
+**¿Cómo se inicializa un repositorio local? (que comando se debe ejecutar?)*
 git init
 *¿Cómo hago para que un directorio deje de ser controlado por git? (que comando se debe ejecutar?)*
 rm -rf .git
