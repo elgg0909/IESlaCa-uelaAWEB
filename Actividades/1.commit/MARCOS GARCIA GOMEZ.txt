@@ -1,14 +1,98 @@
-**¿Cómo se inicializa un repositorio local? (que comando se debe ejecutar?)*
+##  ¿Cómo se inicializa un repositorio local?
+
+Para comenzar a usar Git en un proyecto local, primero debes inicializar un repositorio. Esto se hace con el siguiente comando:
+
+bash
 git init
-*¿Cómo hago para que un directorio deje de ser controlado por git? (que comando se debe ejecutar?)*
+
+
+Este comando crea un subdirectorio oculto llamado .git, que contiene todos los archivos necesarios para el control de versiones del proyecto.
+
+---
+
+##  ¿Cómo hago para que un directorio deje de ser controlado por Git?
+
+Si deseas que un directorio ya versionado por Git deje de estarlo (por ejemplo, para quitar el historial y empezar desde cero), debes eliminar la carpeta .git:
+
+bash
 rm -rf .git
-*Si agrego un archivo a un directorio que ya está siendo controlado por git, ¿está siendo controlado por git?*
-git add
-*¿Qué comando se utiliza para agregar un archivo al repositorio local?*
+
+
+>  *Advertencia*: Esto elimina completamente todo el historial de Git, incluyendo commits, ramas, y configuración del repositorio.
+
+---
+
+##  Si agrego un archivo a un directorio que ya está siendo controlado por Git, ¿está siendo controlado automáticamente?
+
+No. Aunque el directorio esté bajo control de versiones, cualquier archivo nuevo debe ser *agregado manualmente* con el comando:
+
+bash
 git add nombre_del_archivo
-*¿Cómo determino que archivos fueron modificados? (que comando se debe ejecutar?)*
+
+
+Hasta que no uses git add, el archivo no será rastreado ni incluido en los commits.
+
+---
+
+##  ¿Qué comando se utiliza para agregar un archivo al repositorio local?
+
+Para incluir un archivo nuevo o modificado en el siguiente commit, debes agregarlo al área de preparación (staging area) con:
+
+bash
+git add nombre_del_archivo
+
+
+También puedes agregar todos los archivos modificados con:
+
+bash
+git add .
+
+
+---
+
+##  ¿Cómo determino qué archivos fueron modificados?
+
+Para ver el estado actual del repositorio y qué archivos han sido agregados, modificados o eliminados desde el último commit, ejecuta:
+
+bash
 git status
-*¿Qué comando se utiliza para hacer un commit?*
-git commit -m 
-*En sus propias palabras, ¿qué es un commit?*
-Un commit es como una fotografía del estado actual del proyecto. Guarda los cambios realizados hasta ese momento en el repositorio local, permitiéndote volver a ese punto más adelante si es necesario. Es una forma de registrar el historial de versiones del proyecto.
+
+
+Este comando te muestra:
+
+- Archivos sin seguimiento (untracked)
+- Archivos modificados pero no agregados
+- Archivos listos para commit (staged)
+
+---
+
+##  ¿Qué comando se utiliza para hacer un commit?
+
+Una vez que tienes archivos en el área de preparación, puedes guardar los cambios en el historial del repositorio usando:
+
+bash
+git commit -m "Mensaje que describe los cambios realizados"
+
+
+El mensaje entre comillas debe ser claro y descriptivo para que otros (o tú mismo en el futuro) entiendan qué se cambió.
+
+---
+
+##  ¿Qué es un commit?
+
+Un *commit* en Git es como una *fotografía del estado actual del proyecto*. Guarda los cambios realizados hasta ese momento en el repositorio local, y forma parte del historial de versiones.
+
+Un commit permite:
+
+- Volver atrás si algo sale mal
+- Documentar la evolución del proyecto
+- Trabajar en equipo con un historial claro de cambios
+
+Cada commit incluye:
+- Un identificador único (hash)
+- Un mensaje descriptivo
+- Información del autor
+- Marca de tiempo
+- Archivos modificados
+
+---
